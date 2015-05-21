@@ -12,6 +12,7 @@
     <modules>
         <module>lqblog-parent</module>
         <module>lqblog-entity</module>
+        <module>lqblog-sql</module>
     </modules>
 
 
