@@ -1,2 +1,0 @@
-# lqblog
-account blog
