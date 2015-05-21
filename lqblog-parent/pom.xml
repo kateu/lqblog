@@ -21,6 +21,7 @@
         <commons-lang3.version>3.3.2</commons-lang3.version>
         <guava.version>17.0</guava.version>
         <jackson.version>2.4.0</jackson.version>
+        <mybatis.version>3.2.7</mybatis.version>
     </properties>
 
     <dependencyManagement>
@@ -146,6 +147,15 @@
                 <version>${jackson.version}</version>
             </dependency>
             <!-- JSON end -->
+
+            <!--mybatis begin-->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+            <!--mybatis end-->
+
         </dependencies>
 
     </dependencyManagement>
