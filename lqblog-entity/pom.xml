@@ -12,35 +12,56 @@
     <packaging>jar</packaging>
 
     <artifactId>lqblog-entity</artifactId>
-
+    <properties>
+        <!-- 数据库配置 -->
+        <db.config.file>environment/dev.properties</db.config.file>
+        <!-- java代码目录 -->
+        <java.file.dir>${basedir}/src/main/java</java.file.dir>
+        <!-- 资源文件目录 -->
+        <resources.file.dir>${basedir}/src/main/resources</resources.file.dir>
+        <!-- 包名 -->
+        <package.path>com.lqblog.lbg</package.path>
+    </properties>
     <dependencies>
         <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis</artifactId>
+            <groupId>com.lqblog</groupId>
+            <artifactId>lqblog-core</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
-
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <excludes>
+                    <exclude>environment/*.properties</exclude>
+                </excludes>
+            </resource>
+        </resources>
         <plugins>
-            <!--mybatis-generator-maven-plugin-->
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
                 <version>1.3.2</version>
-                <configuration>
-                    <verbose>true</verbose>
-                    <overwrite>true</overwrite>
-                </configuration>
                 <dependencies>
                     <dependency>
                         <groupId>mysql</groupId>
                         <artifactId>mysql-connector-java</artifactId>
-                        <version>${mysql.version}</version>
+                        <version>5.1.9</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.lqblog</groupId>
+                        <artifactId>lqblog-core</artifactId>
+                        <version>1.0-SNAPSHOT</version>
                     </dependency>
                 </dependencies>
+                <configuration>
+                    <verbose>true</verbose>
+                    <overwrite>true</overwrite>
+                    <configurationFile>${basedir}/generator/generatorConfig.xml</configurationFile>
+                </configuration>
             </plugin>
         </plugins>
     </build>
-
-
 </project>
