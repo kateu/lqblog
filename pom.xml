@@ -15,6 +15,7 @@
         <module>lqblog-entity</module>
         <module>lqblog-sql</module>
         <module>lqblog-core</module>
+        <module>lqblog-web</module>
     </modules>
 
 
